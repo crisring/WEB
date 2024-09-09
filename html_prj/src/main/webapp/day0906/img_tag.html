@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		<img 어트리뷰트명="어트리뷰트 값.png"> <img src 이미지 주소="하울.jpg" width="104"
+			height="142">
+		<p></p>
+		문단 여백 <a href="https://twinklegreenworld.tistory.com/51"> swing 공부
+			가자</a> 하이퍼링크
+		<button class="favorite styled" type="button">Add to
+			favorites</button>
+		type <input type="text" /> 다른 type을 넣을 수도 있음
+	</div>
+
+	<br />
+	<br />
+
+
+	<ul>
+		<li><h2>상대경로 - 계속 바꿔야함</h2></li>
+		<li><strong>HTML과 이미지가 같은 위치</strong><br> <img
+			src="img2.jpg"></li>
+
+		<li><strong>HTML의 위치에 하위폴더에 이미지 위치</strong><br> <img
+			src="images/img2.jpg"></li>
+
+		<li><strong>HTML의 위치에 상위폴더에 이미지 위치</strong><br> <img
+			src="../common/images/img2.jpg"></li>
+
+
+		<li><h2>URL</h2></li>
+		<li><strong>HTML의 위치에 상위폴더에 이미지 위치</strong><br> <img
+			src="http://localhost/html_prj/day0906/images/%ED%95%98%EC%9A%B8.jpg "
+			height="500"></li>
+	</ul>
+
+	<h2>이미지의 속성</h2>
+	<img
+		src="http://localhost/html_prj/day0906/images/%ED%95%98%EC%9A%B8.jpg"
+		height="500" title="하울입니다." alt="엑박떴을때 제공할 메시지" border="20">
+
+	<!-- http://localhost/html_prj/test_sub/a.html -->
+	<!-- http://localhost/html_prj/test_sub/today/to_day.png -->
+	<!-- http://localhost/html_prj/test_sub/images/today/to_day.png -->
+	<img src=../today/to_day.png>
+	<img src=../../../today/to_day.png>
+
+</body>
+</html>
