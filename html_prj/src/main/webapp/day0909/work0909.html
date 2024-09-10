@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>회원가입 페이지</h1>
+	<table border="1" width="800" height="500">
+		<tr height="40">
+			<td bgcolor="#e9ecef" width="100"><font color="red">*</font><strong>아이디</strong></td>
+			<td><input type="text" name="id" class="id" id="id"
+				readonly="readonly" />&nbsp;&nbsp;<input type="button" id="bnt"
+				class="bnt" name="bnt" value="중복확인" /></td>
+		</tr>
+
+		<tr>
+			<td bgcolor="#e9ecef"><font color="red">*</font><strong>비밀번호</strong></td>
+			<td><input type="password" name="password" id="password"
+				class="password" /> <font size="1">비밀번호 확인</font>&nbsp;&nbsp;<input
+				type="password" name="password" id="password" class="password" />&nbsp;&nbsp;<font
+				size="1">*6~12자의 영문, 숫자, 특수문자 3가지를 조합하여 입력</font></td>
+		</tr>
+
+		<tr>
+			<td bgcolor="#e9ecef"><font color="red">*</font><strong>이름</strong></td>
+			<td><input type="text" name="name" id="name" class="name" /></td>
+		</tr>
+
+		<tr>
+			<td bgcolor="#e9ecef"><font color="red">*</font><strong>생일</strong></td>
+			<td><input type="date" name="date" id="date" class="password" /></td>
+		</tr>
+
+		<tr>
+			<td bgcolor="#e9ecef"><strong>연락처</strong></td>
+			<td><input type="tel" name="tel1" id="tel1" class="tel1" /></td>
+		</tr>
+
+		<tr>
+			<td bgcolor="#e9ecef"><font color="red">*</font><strong>휴대폰</strong></td>
+			<td><input type="tel" name="tel2" id="tel2" class="tel2" /> <input
+				type="checkbox" name="checkbox" id="checkbox" class="checkbox">&nbsp;수신
+			</td>
+		</tr>
+
+		<tr>
+			<td bgcolor="#e9ecef"><font color="red">*</font><strong>이메일</strong></td>
+			<td><input type="email" name="email" id="email" class="email" />&nbsp;@&nbsp;
+				<select name="emailselect" id="emailselect" class="emailselect">
+					<option selected="selected">선택해주세요.</option>
+					<option>직접 입력</option>
+					<option value="naver.com">naver.com &nbsp;
+					<option value="daum.net">daum.net
+					<option value="gmail.com">gmail.com
+					<option value="hotmail.com">hotmail.com
+					<option value="nate.com">nate.com
+					<option value="korea.com">korea.com
+			</select>&nbsp;<input type="checkbox" name="checkbox" id="checkbox"
+				class="checkbox">&nbsp;수신</td>
+		</tr>
+
+		<tr>
+			<td bgcolor="#e9ecef"><font color="red">*</font><strong>성별</strong></td>
+			<td><input type="radio" name="gender" id="gender" class="gender"
+				value="남" checked="checked" />남자 <input type="radio" name="gender"
+				id="gender2" class="gender" value="여" />여자</td>
+		</tr>
+
+		<tr>
+			<td bgcolor="#e9ecef"><strong>소재지</strong></td>
+			<td><select name="sidogugun" id="sidogugun" class="sidogugun">
+					<option selected="selected">선택해주세요.</option>
+					<option value="강원">강원
+					<option value="경기">경기
+					<option value="경남">경남
+					<option value="경북">경북
+					<option value="광주">광주
+					<option value="대구">대구
+					<option value="대전">대전
+					<option value="부산">부산
+					<option value="서울">서울
+					<option value="울산">울산
+					<option value="인천">인천
+					<option value="전남">전남
+					<option value="전북">전북
+					<option value="제주">제주
+					<option value="충남">충남
+					<option value="충북">충북
+					<option value="해외">해외
+			</select></td>
+		</tr>
+
+		<tr>
+			<td bgcolor="#e9ecef"><font color="red">*</font><strong>우편번호</strong></td>
+			<td><input type="text" name="seq" id="seq" class="seq"
+				readonly="readonly" />&nbsp; <input type="button" name="bnt2"
+				id="bnt2" class="bnt2" readonly="readonly" value="우편번호검색" /></td>
+		</tr>
+
+		<tr>
+			<td bgcolor="#e9ecef"><font color="red">*</font><strong>주소</strong></td>
+			<td>
+				<table>
+					<tr>
+						<td><input type="address1" name="add1" id="add1" class="add1"
+							readonly="readonly" /></td>
+					</tr>
+					<tr>
+						<td><input type="address2" name="add2" id="add2" class="add2" /></td>
+					</tr>
+				</table>
+
+			</td>
+		</tr>
+
+		<tr align="center">
+			<td colspan="2"><input type="button" name="accept" id="accept"
+				class="accept" value="확인" size="100" /> <input type="button"
+				name="cancel" id="cancel" class="cancel" value="취소" /></td>
+		</tr>
+
+	</table>
+
+</body>
+</html>
