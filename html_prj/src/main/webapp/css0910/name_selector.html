@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/* name( attribute ) selector
+   [속성명='값'] { 디자인 코드들,,,,, }
+  */
+
+/*  [type='text']{ height: 30px; width: 150px;} */
+[name='name'] {
+	height: 30px;
+	width: 150px;
+}
+
+[size='10'] {
+	color: #FF0000
+}
+
+[type='text'] {
+	color: blue
+}
+
+[value='독서'], [value='운동'] {
+	width: 300
+}
+
+div {
+	color: red
+}
+</style>
+</head>
+<body>
+	<label>이름</label>
+	<input type="text" name="name" />
+	<br />
+	<label>나이</label>
+	<input type="text" name="age" />
+	<br />
+	<label>성별</label>
+	<input type="radio" name="gender" value="남" />남자 |
+	<input type="radio" name="gender" value="여" />여자
+	<br />
+	<label>취미</label>
+	<input type="checkbox" name="hobby" value="독서" />독서
+	<br />
+	<input type="checkbox" name="hobby" value="영화감상" />영화감상
+	<br />
+	<input type="checkbox" name="hobby" value="음암감상" />음악감상
+	<br />
+	<input type="checkbox" name="hobby" value="운동" />운동
+	<br />
+
+	<font size="10">오늘은 화요일</font>
+	<input type="text" size="10" value="HTML Input" />
+
+
+	<div>하이루</div>
+
+</body>
+</html>

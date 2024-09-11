@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#numTitle{ width: 60px }
+	#subTitle{ width: 515px }
+	#writeTitle{ width: 110px }
+	#dateTitle{ width: 70px }
+	#cntTitle{ width: 70px }
+	#recomTitle{ width: 80px }
+	
+	th,td{ font-size: 15px }
+	
+	.boardTable{ border-top: 3px solid #0E1D6C; 
+				border-bottom: 1px solid #0E1D6C;
+				border-spacing: 0px }
+	th{ height: 37px;border-bottom: 1px solid #0E1D6C  }
+	td{ height: 30px;border-bottom: 1px solid #F2F2F2; text-align: center; }
+	
+	.spk{ font-weight: bold }/* 설문의 글 제목 */
+	.info{ font-weight: bold; color:#0000FF }/* 공지 글 제목 */
+	.list{ font-weight: normal; color:#848484 }/* 일반 글 제목 */
+	.replyCnt{ font-weight: normal; color:#A0A0A0 }/* 댓글 수 */
+	
+	.subjectList{ text-align: left; }
+	
+	tbody > tr:hover{ background-color: #F3F3F3}
+</style>
+
+</head>
+<body>
+	<table class="boardTable">
+	<thead>
+	<tr>
+		<th id="numTitle">번호</th>
+		<th id="subTitle">제목</th>
+		<th id="writeTitle">글쓴이</th>
+		<th id="dateTitle">작성일</th>
+		<th id="cntTitle">조회</th>
+		<th id="recomTitle">추천</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>설문</td>
+		<td class="subjectList"><img src="http://192.168.10.210/html_prj/css0911/images/spk.png"/>
+			<span class="spk">자식 사교육에 돈 엄청 쓸 것 같은 스타는?</span>
+		</td>
+		<td>운영자</td>
+		<td>24/09/09</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td>공지</td>
+		<td class="subjectList"><img src="http://192.168.10.210/html_prj/css0911/images/info.png"/>
+			<span class="info">HIT 갤러리 업데이트 중지 안내</span><span class="replyCnt">[892]</span>
+		</td>
+		<td>운영자</td>
+		<td>23.09.18</td>
+		<td>28595</td>
+		<td>35</td>
+	</tr>
+	<tr>
+		<td>17809</td>
+		<td class="subjectList"><img src="http://192.168.10.210/html_prj/css0911/images/hit.png"/>
+			<span class="list">메피스토펠레스 완성 + 제작관정</span><span class="replyCnt">[587]</span>
+		</td>
+		<td>무지개별</td>
+		<td>23.10.05</td>
+		<td>64710</td>
+		<td>360</td>
+	</tr>
+	<tr>
+		<td>17808</td>
+		<td class="subjectList"><img src="http://192.168.10.210/html_prj/css0911/images/hit.png"/>
+			<span class="list">야쿠르트 아줌마의 비밀병기</span><span class="replyCnt">[409]</span>
+		</td>
+		<td>6D</td>
+		<td>23.10.05</td>
+		<td>70604</td>
+		<td>980</td>
+	</tr>
+	<tr>
+		<td>17807</td>
+		<td class="subjectList"><img src="http://192.168.10.210/html_prj/css0911/images/hit.png"/>
+			<span class="list">첫 해외 여행, 일본갔다온 망가</span><span class="replyCnt">[186]</span>
+		</td>
+		<td>6D</td>
+		<td>23.10.04</td>
+		<td>47810</td>
+		<td>287</td>
+	</tr>
+	<tr>
+		<td>17806</td>
+		<td class="subjectList"><img src="http://192.168.10.210/html_prj/css0911/images/hit.png"/>
+			<span class="list">그 시절, 우리가 사랑했던 디시인사이트...manhwa</span><span class="replyCnt">[862]</span>
+		</td>
+		<td>이재혁</td>
+		<td>23.10.04</td>
+		<td>82049</td>
+		<td>1582</td>
+	</tr>
+	<tr>
+		<td>17805</td>
+		<td class="subjectList"><img src="http://192.168.10.210/html_prj/css0911/images/hit.png"/>
+			<span class="list">7년간 존버한 수제 커피만들기.coffee</span><span class="replyCnt">[224]</span>
+		</td>
+		<td>끾뀪이</td>
+		<td>23.10.03</td>
+		<td>42708</td>
+		<td>605</td>
+	</tr>
+	<tr>
+		<td>17804</td>
+		<td class="subjectList"><img src="http://192.168.10.210/html_prj/css0911/images/hit.png"/>
+			<span class="list">닌텐도 DS로 원시고대 Wii 만들기</span><span class="replyCnt">[224]</span>
+		</td>
+		<td>도박사</td>
+		<td>23.10.02</td>
+		<td>62275</td>
+		<td>560</td>
+	</tr>
+	</tbody>
+	
+	</table>
+</body>
+</html>

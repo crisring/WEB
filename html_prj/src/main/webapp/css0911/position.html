@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://192.168.10.210/html_prj/common/css/main_20240911.css">
+<style type="text/css">
+	#wrap{ height:1200px;width:800px; position: relative;top: 100px; left:150px }
+	
+	#abs{ background-color: #6791E6;width:250px; height: 300px;
+		position: absolute;top:30px;left: 400px; }
+		
+	#fix{ background-color: #FF8F8F;width:150px; height: 600px;
+		position: fixed; top:30px;left: 800px; }
+
+</style>
+</head>
+<body>
+<div id="wrap">
+	<!-- 감싸고 있는 div의 relative에의해 시작좌표가 변경된다. -->
+	<div id="abs">position:absolute</div>
+	<!-- 브라우저의 좌상단이 시작좌표.(relative에 영향을 받지 않는다.) -->
+	<div id="fix">position:fixed</div>
+</div>
+</body>
+</html>

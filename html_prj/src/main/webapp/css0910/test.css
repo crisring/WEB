@@ -1,4 +1,10 @@
 @charset "UTF-8";
 
-.border{border : 2px dotted #dfdfdf; font-size:40px}
-.bg{background-color:#FF4545}
+.border {
+	border: 2px dotted #dfdfdf;
+	font-size: 40px
+}
+
+.bg {
+	background-color: #FF4545
+}
