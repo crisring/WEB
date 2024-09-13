@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SEARCH 아이디/비밀번호 찾기</title>
+<link rel="stylesheet" type="text/css"
+	href="http://192.168.10.219/html_prj/common/css/main_20240911.css">
+<style type="text/css">
+#wrap {
+	width: 900px;
+	height: auto;
+	margin: 0 auto;
+	border: 1px solid #000;
+	padding: 20px;
+	position: relative;
+}
+
+#header {
+	height: 100px;
+	text-align: center;
+	margin-bottom: 20px;
+	border-top: 2px solid #002060;
+	border-bottom: 1px solid #ccc;
+	padding: 20px 0;
+}
+
+#container {
+	position: relative;
+	height: 270px;
+	border-bottom: 1px solid #ccc;
+}
+
+.idSearch, .pwSearch {
+	width: 400px;
+	height: 250px;
+	position: absolute;
+	top: 0;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #ccc;
+	border-collapse: collapse;
+}
+
+.idSearch {
+	left: 0;
+}
+
+.pwSearch {
+	right: 0;
+}
+
+h1 {
+	font-size: 32px;
+	font-weight: bold;
+	color: #002060;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+h3 {
+	margin-bottom: 10px;
+	font-size: 18px;
+	color: black;
+}
+
+input[type="text"] {
+	width: 300px;
+	height: 40px;
+	margin-left: 10px;
+	padding-left: 10px;
+	color: #aaa;
+}
+
+input[type="text"].name::placeholder, .email::placeholder, .id::placeholder
+	{
+	color: #aaa;
+}
+
+input[type="text"]:focus {
+	outline: none;
+	color: #000;
+}
+
+hr {
+	border-top: 1px solid #ccc;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#check1 {
+	width: 200px;
+	height: 42px;
+	background-color: #002060;
+	color: white;
+	border: none;
+	font-size: 18px;
+	cursor: pointer;
+	margin-top: 100px;
+	margin-left: 100px;
+}
+
+#check2 {
+	width: 200px;
+	height: 42px;
+	background-color: #002060;
+	color: white;
+	border: none;
+	font-size: 18px;
+	cursor: pointer;
+	margin-top: 51px;
+	margin-left: 100px;
+}
+
+#footer {
+	height: 100px;
+	clear: both;
+	text-align: center;
+	margin-top: 20px;
+}
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">
+			<br />
+			<h1>
+				<font size="7">SEARCH</font><font size="3">아이디/비밀번호 찾기</font>
+			</h1>
+		</div>
+		<div id="container">
+			<div class="idSearch">
+				<h3>아이디 찾기</h3>
+				<p>회원님의 이름과 이메일을 입력해주세요.</p>
+				<table>
+					<tr>
+						<td><img
+							src="http://192.168.10.219/html_prj/js0912/images/name_icon.png"></td>
+						<td><input type="text" id="name" class="name"
+							placeholder="이름"></td>
+					</tr>
+					<tr>
+						<td><img
+							src="http://192.168.10.219/html_prj/js0912/images/email_icon.png"></td>
+						<td><input type="text" id="email" class="email"
+							placeholder="이메일"></td>
+					</tr>
+				</table>
+				<input type="button" id="check1" class="check1" value="확인">
+			</div>
+			<div class="pwSearch">
+				<h3>비밀번호 찾기</h3>
+				<p>회원님의 이름과 아이디, 이메일을 입력해주세요.</p>
+				<table>
+					<tr>
+						<td><img
+							src="http://192.168.10.219/html_prj/js0912/images/name_icon.png"></td>
+						<td><input type="text" id="pw_name" class="name"
+							placeholder="이름"></td>
+					</tr>
+					<tr>
+						<td><img
+							src="http://192.168.10.219/html_prj/js0912/images/id_icon.png"></td>
+						<td><input type="text" id="pw_id" class="id"
+							placeholder="아이디"></td>
+					</tr>
+					<tr>
+						<td><img
+							src="http://192.168.10.219/html_prj/js0912/images/email_icon.png"></td>
+						<td><input type="text" id="pw_email" class="email"
+							placeholder="이메일"></td>
+					</tr>
+				</table>
+				<input type="button" id="check2" class="check2" value="확인">
+			</div>
+		</div>
+		<div id="footer">
+			<!-- footer : 900(w) x 100(h) -->
+		</div>
+	</div>
+</body>
+</html>

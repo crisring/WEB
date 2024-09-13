@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css"
+	href="http://192.168.10.219/html_prj/common/css/main_20240911.css">
+<style type="text/css">
+
+/* 800px 이하의 디자인설정 */
+@media screen and ( max-width:800px ) {
+	.color {
+		color: #FF0000
+	}
+	#img {
+		display: none
+	}
+	#number {
+		width: 50px
+	}
+	#name {
+		width: 150px
+	}
+}
+
+/* 800px 이상의 디자인설정 */
+@media screen and ( min-width:800px ) {
+	.color {
+		color: #0000FF;
+		font-weight: bold;
+	}
+	#img {
+		display: block;
+	}
+	#number {
+		width: 200px
+	}
+	#name {
+		width: 300px
+	}
+}
+
+table {
+	border: 1px solid #dfdfdf;
+	border-spacing: 0px
+}
+
+th, td {
+	border: 1px solid #dfdfdf
+}
+</style>
+</head>
+<body>
+	<div class="color">브라우저의 넓이가 800px까지는 글자가 빨간으로 변경됩니다. 800px이상 부터는
+		글자의 색을 파란색으로 변경합니다.</div>
+	<div id="img">
+		<img src="../common/images/img.png" />
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th id="number">번호</th>
+				<th id="name">이름</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>변준수</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>유조혁</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

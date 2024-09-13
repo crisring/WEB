@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css"
+	href="http://192.168.10.219/html_prj/common/css/main_20240911.css">
+<style type="text/css">
+#wrap {
+	width: 900px;
+	height: 1200px;
+	margin: 0px auto
+}
+
+#header {
+	height: 200px;
+}
+
+#container {
+	height: 900px;
+}
+
+#footer {
+	height: 100px;
+}
+</style>
+
+<script type="text/javascript">
+	function useAlert() {
+		alert("안녕하세요?"); // 소스코드의 실행을 멈춘다.
+		var msg = "오늘은 목요일";
+		alert(msg);
+	}
+
+	function useConsole() {
+		console.log("콘솔에 출력합니다.");
+		var year = 2024;
+		var month = 9;
+		console.log(year + "년" + month + "월")
+
+	}
+	function useWrite() {
+		window.document.write("document.write 출력");
+	}
+
+	// document.write("JavaScript!!"); 코드는 위에서 아래로 흐른다.
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">
+			<!--header : 900(w) x 200(h)-->
+		</div>
+		<div id="container">
+			<!-- container : 900(w) x 900(h) -->
+
+			<h2>JavaScript 다양한 출력</h2>
+			<input type="button" value="alert 출력" class="btnMy"
+				style="width: 120px" onclick="useAlert();"> <input
+				type="button" value="console 출력" class="btnMy" style="width: 120px"
+				onclick="useConsole();"> <input type="button"
+				value="HTML body 출력" class="btnMy" style="width: 120px"
+				onclick="useWrite();">
+		</div>
+		<div id="footer">
+			<!--footer 900(w) x 100(h)-->
+		</div>
+	</div>
+</body>
+</html>

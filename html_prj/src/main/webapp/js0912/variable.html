@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css"
+	href="http://192.168.10.210/html_prj/common/css/main_20240911.css">
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	//지역변수
+	var msg = "내일은 금요일 입니다."; //msg의 형은 string
+	document.write(msg + " / " + typeof (msg));
+	document.write("<br>");
+	msg = 13; //msg의 데이터 형은 number
+	document.write(msg + " / " + typeof (msg));
+	document.write("<br>");
+	msg = false;//msg의 데이터 형은 boolean
+	document.write(msg + " / " + typeof (msg));
+
+	document.write("<br>");
+
+	//전역변수
+	msg2 = "오늘은 목요일입니다.";
+	document.write(msg2 + " / " + typeof (msg2));
+
+	function useVariable() {
+		var msg3 = "자바스크립트 지역변수";
+		msg4 = "자바스크립트 전역변수";
+		alert("지역 : " + msg3 + "\n전역 : " + msg4);
+	}//useVariable
+
+	function useVariable2() {
+		//alert("지역 : "+ msg3); //지역변수 : 사용불가 error
+		alert("전역 : " + msg4);
+	}//useVariable2
+</script>
+</head>
+<body>
+	<input type="button" value="전역과 지역의 차이" class="btnMy"
+		style="width: 150px" onclick="useVariable()" />
+	<input type="button" value="전역과 지역의 차이 변수의 사용" class="btnMy"
+		style="width: 180px" onclick="useVariable2()" />
+</body>
+</html>
