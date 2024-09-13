@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon"
+	href="http://192.168.10.225/html_prj/common/images/favicon.ico" />
+<link rel="stylesheet" type="text/css"
+	href="http://192.168.10.210/html_prj/common/css/main_20240911.css">
+<style type="text/css">
+.group1 {
+	color: #0000FF
+}
+
+.group2 {
+	color: #FF0000
+}
+
+.group3 {
+	color: #00FF00
+}
+
+.others {
+	color: #000000
+}
+
+body {
+	font-size: 10;
+}
+</style>
+<script type="text/javascript">
+	//이름을 입력받아서 "신우석", "김현우","차성호" 라면 
+	//이름을 HTML body에 출력하고, 이름 앞에 "조장" 붙여서 출력 한다.
+	// 그렇지 않으면 "평민" 으로 붙여서 출력 
+	//조장의 글자색은  1조 - 파란색, 2조 - 빨간색, 3-녹색으로 출력, "평민"- 검은색 
+	const name = prompt("이름을 입력해 주세요.\n신우석,김현우,차성호,변준수,유조혁");
+	let style = "others";
+	let grade = "조장";
+
+	/* 	if (name == "신우석") {
+	 style = "group1";
+	 } else if (name == "김현우") {
+	 style = "group2";
+	 } else if (name == "차성호") {
+	 style = "group3";
+	 } else {
+	 grade = "평민";
+	 }//enmd  */
+
+	switch (name) {
+
+	case "신우석":
+		style = "group1";
+		break;
+	case "김현우":
+		style = "group2";
+		break;
+	case "차성호":
+		style = "group3";
+		break;
+	default:
+		grade = "평민";
+
+	}
+
+	document
+			.write("<strong class='"+style+"'>" + grade + "</strong> : " + name);
+</script>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

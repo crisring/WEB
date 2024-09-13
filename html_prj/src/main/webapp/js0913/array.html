@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css"
+	href="http://192.168.10.219/html_prj/common/css/main_20240911.css">
+<style type="text/css">
+body {
+	font-size: 20;
+}
+
+select {
+	font-size: 20px; /* 글자 크기 */
+	padding: 10px; /* 상자 크기 */
+	width: 200px; /* 상자의 너비 */
+}
+</style>
+
+<script type="text/javascript">
+	//1. 생성) var 배열명=new Array();
+	var arr = new Array();
+	document.write(`배열의 방의 수 ${ arr.length }개<br>`);
+	//2. 값 할당) 배열명[인덱스]=값;
+	/* arr[0]=2024;
+	 arr[1]=9;
+	 arr[2]=13;
+	 */
+
+	arr.push(2024); //arr[0]=2024
+	arr.push(9);//arr[1]=9
+	arr.push(13);//arr[2]=13
+	arr.push(14);//arr[3]=14
+
+	document.write(`배열의 방의 수 ${ arr.length }개<br>`);
+
+	//3. 값 사용
+	document.write(`arr[0]=${ arr[0] }, arr[1]=${ arr[1] }<br>`);
+
+	//4. 일괄처리
+
+	document.write("<ul>");
+	var sum = 0;
+	for (var i = 0; i < arr.length; i++) {
+		document.write(`<li>arr[${ i }]=${ arr[i] }</li>`);
+		sum += arr[i];
+	}//end for
+	document.write("</ul>");
+	document.write(`총합 : ${ sum }<br>`);
+
+	//배열의 초기화
+	var nameArr = [ "김지훈", "이인혁", "차성호", "변준수", "박채린" ];
+	//값할당
+	//nameArr[5]="지영빈";
+	nameArr.push("지영빈");// 배열의 가장 마지막 방 이후 추가된다.
+
+	//이름을 입력받아 이름이 배열의 방의 값과 같다면 해당 번째 방의 값을 선택해보여주세요.
+	var name = prompt("이름을 입력해주세요.]");
+	var selectFlag = "";
+	document.write("<select>");
+	for (var i = 0; i < nameArr.length; i++) {
+		selectFlag = "";
+		if (name === nameArr[i]) {
+			selectFlag = " selected='selected'";
+		}//end if
+
+		document
+				.write(`<option value="${nameArr[i] }"${selectFlag}> ${nameArr[i] }님 </option>`);
+		sum += arr[i];
+	}//end for
+	document.write("</select>");
+</script>
+</head>
+<body>
+
+
+</body>
+</html>

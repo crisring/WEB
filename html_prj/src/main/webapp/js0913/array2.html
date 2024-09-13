@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon"
+	href="http://192.168.10.219/html_prj/common/images/favicon.ico" />
+<link rel="stylesheet" type="text/css"
+	href="http://192.168.10.219/html_prj/common/css/main_20240911.css">
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	var nameArr = [ "김지훈", "이인혁", "차성호", "변준수", "박채린" ];
+
+	var name = "변준수";
+	var index = nameArr.indexOf(name);
+	document.write(`${ name}은 ${index} 번째 방에 존재<br>`);
+
+	var name = "시아준수";
+	var index = nameArr.indexOf(name);// 값이 없을 때에는 -1
+	document.write(`${ name}은 ${index} 번째 방에 존재<br>`);
+
+	document.write("삭제 전 <br/>");
+	for (var i = 0; i < nameArr.length; i++) {
+		document.write(`${ nameArr[i]} `);
+	}//end for
+	document.write("<br/>");
+
+	//배열 방의 값 삭제.  nameArr.splice(시작인덱스,방의 수);
+	nameArr.splice(1, 3);
+
+	document.write("삭제 후 <br/>");
+	for (var i = 0; i < nameArr.length; i++) {
+		document.write(`${ nameArr[i]} `);
+	}//end for
+	document.write("<br/>");
+	
+	var arr1=["Java SE","Oracle DBMS", "JDBC"];
+	var arr2=["HTML","CSS",...arr1];
+	
+	for (var i = 0; i < arr2.length; i++) {
+		document.write(`${ arr2[i]} `);
+	}//end for
+	document.write("<br/>");
+	
+	// 배열의 가장 마지막 방 뒤에 배열 추가
+	var arr3=["오늘은 ", "금요일"];
+	arr2.push(...arr3);
+	
+	for (var i = 0; i < arr2.length; i++) {
+		document.write(`${ arr2[i]} `);
+	}//end for
+	document.write("<br/>");
+	
+</script>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

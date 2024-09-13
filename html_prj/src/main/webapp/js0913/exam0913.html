@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css"
+	href="http://192.168.10.219/html_prj/common/css/main_20240911.css">
+<style type="text/css">
+div {
+	width: 100px;
+	height: 100px;
+	border: 1px solid #333;
+}
+
+.man {
+	background-color: blue;
+}
+
+.girl {
+	background-color: red;
+}
+</style>
+<script type="text/javascript">
+	window.onload = function() {
+		let birth_year = prompt("태어난 해를 입력하세요.");
+		var age = 2024 - birth_year;
+
+		console.log("당신의 태어난 해는 " + birth_year + "\n당신의 나이는: " + age);
+
+		let gender = prompt("성별을 입력하세요");
+		let styleClass = "";
+
+		switch (gender) {
+		case "여자":
+			styleClass = "girl";
+			break;
+		case "남자":
+			styleClass = "man";
+			break;
+		default:
+			styleClass = "others"; // 정의된 클래스가 없으므로 "others" 스타일로 설정
+			break;
+		}
+
+		/* document.getElementById("genderDiv").innerHTML = `<div class="${styleClass}">${gender}</div>`; */
+		document.write('<div class = ${styleClass}>${gender}</div>');
+	}
+</script>
+</head>
+<body>
+</body>
+</html>

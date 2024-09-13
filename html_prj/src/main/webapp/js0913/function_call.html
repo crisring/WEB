@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon"
+	href="http://192.168.10.225/html_prj/common/images/favicon.ico" />
+<link rel="stylesheet" type="text/css"
+	href="http://192.168.10.210/html_prj/common/css/main_20240911.css">
+<style type="text/css">
+img {
+	cursor: pointer;
+}
+</style>
+<script type="text/javascript">
+	function call() {
+		alert("called!!!!");
+	}//call
+</script>
+</head>
+<!-- <body onload="call()"> -->
+<body>
+	<div>
+		<input type="button" value="클릭" class="btnMy" onclick="call()" /> <br>
+		<img src="../common/images/img.png" onclick="call()" /> <br> <input
+			type="button" value="더블클릭" class="btnMySubmit" ondblclick="call()" />
+		<br> <label for="kd">키다운</label> <input type="text" id="kd"
+			onkeydown="call()"><br> <label for="ku">키업</label> <input
+			type="text" id="ku" onkeyup="call()"><br>
+		<p>
+			<label>마우스포인터가 올라 왔을 때</label> <img src="../common/images/img.png"
+				onmouseover="call()" />
+		</p>
+		<p>
+			<label>마우스포인터가 빠져나갔 때</label> <img src="../common/images/img.png"
+				onmouseout="call()" />
+		</p>
+		<div>
+			<label>change</label>
+			<!-- 이전에 선택한 옵션과 다른 옵션이 선택된 경우 -->
+			<select onchange="call()">
+				<option>A</option>
+				<option>B</option>
+				<option>C</option>
+			</select>
+		</div>
+		<div>
+			<label for="chg">change</label> <input type="text" name="chg"
+				id="chg" onchange="call()" />
+		</div>
+		<div>
+			<label>blur</label> <input type="text" name="blur" onblur="call()" />
+		</div>
+
+	</div>
+</body>
+</html>

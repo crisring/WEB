@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css"
+	href="http://192.168.10.219/html_prj/common/css/main_20240911.css">
+<style type="text/css">
+</style>
+
+<script type="text/javascript">
+	// 1차원 배열 생성
+	var arr1 = new Array();
+
+	// 1차원 배열의 방에 1차원 배열 생성
+	arr1[0] = new Array();
+	arr1[1] = new Array();
+	arr1[2] = [ "기본문법", "변수", "연산자", "제어문" ];
+
+	// 값 할당
+	arr1[0][0] = "a tag";
+	arr1[0][1] = "br tag";
+	arr1[0][2] = "li tag";
+	arr1[0][3] = "ol tag";
+	arr1[0][4] = "img tag";
+
+	arr1[1][0] = "id selector";
+	arr1[1][1] = "class selector";
+	arr1[1][2] = "tag selector";
+
+	document.write("<ol>");
+	for (var i = 0; i < arr1.length; i++) {
+		document.write("<li>")
+		for (var j = 0; j < arr1[i].length; j++) {
+			document.write(arr1[i][j] + ", ");
+		}
+		document.write("</li>")
+	}
+
+	document.write("</ol>");
+</script>
+</head>
+<body>
+
+
+</body>
+</html>
