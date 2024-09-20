@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon"
+	href="http://192.168.10.219/html_prj/common/images/favicon.ico" />
+<link rel="stylesheet" type="text/css"
+	href="http://192.168.10.219/html_prj/common/css/main_20240911.css">
+<style type="text/css">
+div {
+	color: #000
+}
+
+#wrap {
+	width: 800px;
+	height: 400px;
+	margin: 0px auto
+}
+
+#checked {
+	width: 398px;
+	height: 398px;
+	float: left;
+	border: 1px solid #333
+}
+
+#selected {
+	width: 398px;
+	height: 398px;
+	float: right;
+	border: 1px solid #333
+}
+</style>
+<script type="text/javascript">
+	function getCheckedValue() {
+		var obj = document.chkFrm;
+
+		var gender = "";
+		//1.Form Control 얻기 => 배열
+		var genderArr = obj.gender;
+		//2. 반복
+		for (var i = 0; i < genderArr.length; i++) {
+			//alert(genderArr[i].checked +" "+ genderArr[i].value)
+			//3.확인된 상태의 Form Control값을 얻기
+			if (genderArr[i].checked) {
+				gender = genderArr[i].value;
+			}//end if
+		}//end for
+
+		if (gender == "") {
+			alert("성별은 반드시 선택하셔야 합니다!");
+			return;
+		}//end if
+
+		var chkHobbyArr = obj.hobby;
+
+		var hobby = "<ul>";
+		var chkFlag = false;
+		for (var i = 0; i < chkHobbyArr.length; i++) {
+			if (chkHobbyArr[i].checked) {
+				chkFlag = true;
+				hobby += `<li>${ chkHobbyArr[i].value }</li>`;
+			}
+		}//end for
+
+		if (!chkFlag) {
+			hobby += `<li>선택한 취미가 없습니다.</li>`;
+		}
+		hobby += "</ul>";
+
+		document.getElementById("chkOut").innerHTML = "성별" + gender + "<br/>"
+				+ hobby;
+
+	}//getCheckedValue
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<h2>배열로 값을 얻는 HTML Form Control들</h2>
+		<div id="checked">
+			<form name="chkFrm">
+				<h2>checked 속성으로 값 얻기</h2>
+				<input type="radio" name="gender" value="남자">남자 | <input
+					type="radio" name="gender" value="여자">여자 <br /> <br /> <input
+					type="checkbox" name="hobby" value="영화감상" />영화 <input
+					type="checkbox" name="hobby" value="음악감상" />음악 <input
+					type="checkbox" name="hobby" value="게임" />게임 <input
+					type="checkbox" name="hobby" value="운동" />운동 <input
+					type="checkbox" name="hobby" value="등산" />등산 <input
+					type="checkbox" name="hobby" value="낚시" />낚시
+
+				<div id="chkOut"></div>
+				<div>
+					<input type="button" value="checked 값얻기" class="btnMy"
+						onclick="getCheckedValue()" />
+				</div>
+			</form>
+		</div>
+		<div id="selected">
+			<h2>selected 속성으로 값 얻기</h2>
+
+		</div>
+
+	</div>
+</body>
+</html>

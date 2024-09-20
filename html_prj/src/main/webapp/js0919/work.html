@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon"
+	href="http://192.168.10.219/html_prj/common/images/favicon.ico" />
+<link rel="stylesheet" type="text/css"
+	href="http://192.168.10.219/html_prj/common/css/main_20240911.css">
+<style type="text/css">
+div {
+	margin: 10px
+}
+
+.lottoBody {
+	width: 50px;
+	height: 50px;
+	margin: 10px;
+	border: 1px solid #333;
+	border-radius: 50%;
+	display: inline-block;
+	text-align: center;
+	line-height: 50px;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#diceDiv {
+	width: 300px;
+	height: 180px;
+	text-align: center;
+}
+
+#lottoDiv {
+	width: 600px;
+	height: 100px;
+	border: 1px solid #333;
+}
+</style>
+<script type="text/javascript">
+	function setDice() {
+		//1~6사이 난수 두개를 발생
+		let dice_1_num = parseInt(Math.random() * 6) + 1;
+		let dice_2_num = parseInt(Math.random() * 6) + 1;
+
+		let diceImg = `<img src='images/dice_${ dice_1_num}.png' title='${ dice_1_num}'>`;
+		let diceImg2 = `<img src='images/dice_${ dice_2_num}.png' title='${ dice_2_num}'>`;
+
+		//1. node를 찾고
+		var divNode = document.getElementById("diceDiv");
+
+		//2. 출력
+		divNode.innerHTML = diceImg + " " + diceImg2 + "<br>합계 : "
+				+ (dice_1_num + dice_2_num);
+	}//setDice
+
+	function setLotto() {
+		let lottoNumbers = [];
+
+		while (lottoNumbers.length < 6) {
+			let newNum = parseInt(Math.random() * 45) + 1;
+
+			// 끝을 찾으면 추가
+			if (lottoNumbers.indexOf(newNum) === -1) {
+				lottoNumbers.push(newNum);
+			}
+		}
+
+		let lottoHtml = '';
+
+		for (let i = 0; i < lottoNumbers.length; i++) {
+			lottoHtml += `<div class='lottoBody'>${lottoNumbers[i]}</div>`;
+		}
+
+		let divNode = document.getElementById("lottoDiv");
+		divNode.innerHTML = lottoHtml;
+	}// setLotto
+</script>
+</head>
+<body>
+	<div id="diceDiv"></div>
+	<input type="button" value="주사위 던지기" class="btnMy" style="width: 150px"
+		onclick="setDice()" />
+
+
+	<div id="lottoDiv"></div>
+	<input type="button" value="로또번호생성" class="btnMy" style="width: 150px"
+		onclick="setLotto()" />
+
+</body>
+</html>
+
+
+
+
+
+
+

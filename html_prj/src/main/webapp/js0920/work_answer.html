@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shorcut icon"
+	href="http://192.168.10.210/html_prj/common/images/favicon.ico">
+
+<link rel="stylesheet" type="text/css"
+	href="http://192.168.10.210/html_prj/common/css/main_20240911.css">
+<style type="text/css">
+#div {
+	border: 1px solid pink;
+	height: 300px;
+	width: 300px;
+}
+</style>
+
+<script type="text/javascript">
+	function printValue() {
+		/*
+		 입력버튼이 눌려지면 //1. 버튼을 눌렀을 때 함수를 호출
+		 출력창에 아래와 같이 출력되도록 프로그램을 작성해보세요.
+		 -주민번호가 총 13자리 였을 때 에 아래와 같이 보여주고,  
+		 13 자리가 아니면 “주민번호의 자릿수를 확인해 주세요!”를 출력
+
+		 xxx님 
+		 생년월일 : xxxx-xx-xx
+		 성별 : 남 | 여자
+		 나이 : xx살
+		 띠 : 띠 이미지
+		 */
+
+		//2. HTML Form Control의 값을 받기 => 
+		var obj = document.workFrm;
+
+		var name = obj.name.value;
+		var ssn1 = obj.ssn1.value;
+		var ssn2 = obj.ssn2.value;
+		//3. 업무처리
+
+		var outputMsg = "주민번호의 자릿수를 확인해 주세요!";
+		//주민번호가 총 13자리 였을 때
+		ssn1 = ssn1.replaceAll(/[a-zA-Zㄱ-힣~!@#$%^&*()]/g, "");
+		ssn2 = ssn2.replaceAll(/[a-zA-Zㄱ-힣~!@#$%^&*()]/g, "");
+		if (ssn1.length == 6 && ssn2.length == 7) {
+			outputMsg = name + "님<br>"; ////xxx님 
+
+			//900101-1234567
+
+			var genderFlag = ssn2.charAt(0);//0,1,2,3,4,5,6,7,8,9
+
+			const preYearArr = [ 18, 19, 19, 20, 20, 19, 19, 20, 20, 18 ];
+
+			var birthYear = preYearArr[genderFlag] + ssn1.substring(0, 2);//90
+			var birthMonth = ssn1.substring(2, 4);//01
+			var birthDay = ssn1.substring(4, 6);//01
+
+			outputMsg += `생년월일 : ${birthYear}-${birthMonth}-${birthDay}<br>`; //생년월일 : xxxx-xx-xx
+
+			// 성별 : 남 | 여자
+			outputMsg += `성별 : ${ parseInt(genderFlag)%2==0?"여자":"남자" }<br>`;
+			//나이 : xx살
+			var nowYear = new Date().getFullYear();
+			outputMsg += `나이 : ${ nowYear-birthYear+1 }<br>`;
+			//띠 : 띠 이미지
+			const zodiacImgArr = [ "monkey", "rooster", "dog", "pig", "rat",
+					"ox", "tiger", "rabbit", "dragon", "snake", "horse",
+					"sheep" ];
+
+			outputMsg += `띠 : <img src='http://192.168.10.210/html_prj/js0920/images/${ zodiacImgArr[birthYear%12] }.png'/><br>`;
+		}//end if
+		//출력
+		document.getElementById("div").innerHTML = outputMsg;
+	}//printValue
+</script>
+
+</head>
+
+
+<body>
+
+	<div>
+		<h2>숙제를 해보자~</h2>
+		<form name="workFrm">
+			<table>
+				<tr>
+					<td><label for="name">이름</label></td>
+					<td><input type="text" name="name" id="name" class="inputBox"
+						style="width: 150px" value="홍길동"></td>
+				</tr>
+
+				<tr>
+					<td><label for="ssn1">주민번호</label></td>
+					<td><input value="900920" type="text" name="ssn1" id="ssn1"
+						maxlength="6" class="inputBox" style="width: 120px"> - <input
+						value="1234567" type="password" name="ssn2" id="ssn2"
+						class="inputBox" maxlength="7" style="width: 140px"></td>
+				</tr>
+
+				<tr>
+					<td>
+					<td><input type="button" value="출력하기" class="btnMySubmit "
+						onclick="printValue()"></td>
+				</tr>
+
+
+			</table>
+		</form>
+
+		<div id="div"></div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon"
+	href="http://192.168.0.8/html_prj/common/images/favicon.ico" />
+<link rel="stylesheet" type="text/css"
+	href="http://192.168.0.8/html_prj/common/css/main_20240911.css">
+<style type="text/css">
+#dateDiv {
+	width: 800px;
+	height: 100ps;
+	font-size: 20px;
+	color: #000;
+}
+</style>
+<script type="text/javascript">
+	function useDate() {
+
+		// 날짜 객체 생성
+		var date = new Date();
+
+		// 함수 사용
+		var output = `date객체의 값 : ${date}<br/> 
+					  ${date.getFullYear()}년 
+					  ${date.getMonth()+1}월 
+					  ${date.getDate()}일<br/>
+					  ${ date.getHours() } : ${ date.getMinutes() } : ${ date.getSeconds() }  
+					  `;
+
+		document.getElementById("dateDiv").innerHTML = output;
+		
+		//지정한 시간에(ms) 지정한 함수를 호출하는 함수. setTimeout(함수명,ms) 
+		setTimeout(useDate,1000);
+	}
+</script>
+</head>
+<body>
+	<div id="dateDiv"></div>
+	<input type="button" value="날짜 얻기" class="btnMy" style="width: 80px"
+		onclick="useDate()" />
+
+
+</body>
+</html>

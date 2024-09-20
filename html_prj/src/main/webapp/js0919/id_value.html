@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon"
+	href="http://192.168.10.219/html_prj/common/images/favicon.ico" />
+<link rel="stylesheet" type="text/css"
+	href="http://192.168.10.219/html_prj/common/css/main_20240911.css">
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	function getIdValue() {
+		var name = document.getElementById("name").value;
+		var age = document.getElementById("age").value;
+
+		alert(`이름 : ${name} 나이 : ${age}`);
+
+	}// getIdValue
+</script>
+</head>
+<body>
+	<!-- id 속성은 <form>태그가 존재하지 않더라도 값을 얻을 수 있다. -->
+	<label>이름</label>
+	<input type="text" id="name" class="inputBox" style="width: 150px" />
+	<br>
+	<label>나이</label>
+	<input type="password" id="age" class="inputBox" style="width: 150px" />
+	<br>
+	<input type="button" value="값 얻기" class="btnMy" style="width: 80px"
+		onclick="getIdValue()" />
+	<br>
+
+</body>
+</html>

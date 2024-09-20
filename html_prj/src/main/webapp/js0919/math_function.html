@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon"
+	href="http://192.168.10.219/html_prj/common/images/favicon.ico" />
+<link rel="stylesheet" type="text/css"
+	href="http://192.168.10.219/html_prj/common/css/main_20240911.css">
+<style type="text/css">
+body {
+	font-size: 20px;
+	color: #000000
+}
+
+#output {
+	width: 600px;
+	height: 300px;
+	border: 1px solid #333;
+}
+</style>
+<script type="text/javascript">
+	let i = -9;
+	document.write(i + " 의 절대값 " + Math.abs(i) + "<br>");
+
+	i = 10.5;
+	document.write(i + " 반올림 " + Math.round(i) + "<br>");
+
+	i = 10.1;
+	document.write(i + " 올림 " + Math.ceil(i) + "<br>");
+
+	i = 10.9;
+	document.write(i + " 내림 " + Math.floor(i) + "<br>");
+
+	i = prompt("아무 숫자를 입력"); //string => + 연산하면 덧붙임이된다. 
+	document.write(i + 10 + "<br>");
+	document.write(parseInt(i) + 10 + "<br>");
+
+	i = 2024.19;//number ( 실수 )
+	document.write(i + "를 정수로 " + parseInt(i) + "<br>");
+
+	function useRandom() {
+		//1. 태그를 찾기
+		let divNode = document.getElementById("output");
+		//alert( divNode )
+
+		var ran = Math.random();
+		let randomValue = "발생할 난수 : <strong>" + ran + "</strong></br>";
+		randomValue += "범위 난수 : <strong>" + (ran * 10) + "</strong></br>";
+		randomValue += "정수 범위 난수 : <strong>" + parseInt(ran * 10)
+				+ "</strong></br>";
+
+		//2.태그에 보여줄 HTML코드 설정
+		// divNode.innerHTML = "<strong>값 설정</strong><input type='text' />";
+		divNode.innerHTML = randomValue;
+	}
+</script>
+</head>
+<body>
+	<div>
+		<div id="output"></div>
+		<input type="button" value="난수얻기" class="btnMy" style="width: 100px"
+			onclick="useRandom()" />
+	</div>
+</body>
+</html>
