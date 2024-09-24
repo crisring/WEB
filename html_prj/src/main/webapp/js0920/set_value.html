@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon"
+	href="http://192.168.10.219/html_prj/common/images/favicon.ico" />
+<link rel="stylesheet" type="text/css"
+	href="http://192.168.10.219/html_prj/common/css/main_20240911.css">
+<style type="text/css">
+#div {
+	font-weight: bold;
+	font-size: 20px;
+	color: #000
+}
+</style>
+<script type="text/javascript">
+	function setValue() {
+
+		// HTML Form Control에 값 설정
+		var obj = document.frm;
+
+		obj.text.value = "오늘은 금요일";
+		obj.pass.value = "1234";
+		obj.chk.checked = true;
+		obj.hid.value = "내일은 토요일 다음 주 25일은 휴강"
+		/* obj.upfile.value = "c:/dev/env.bat"; 파일은 설정 불가 */
+		obj.ta.value= "javaScript는 Front-end 언어"
+ 
+	}//setValue
+</script>
+</head>
+<body>
+	<div>
+		<h2>name 속성에 값설정</h2>
+		<form name="frm">
+			<table>
+				<tr>
+					<td><label for="text">text</label></td>
+					<td><input type="text" name="text" id="text" class="inputBox"
+						style="width: 150px" /></td>
+				</tr>
+				<tr>
+					<td><label for="pass">password</label></td>
+					<td><input type="password" name="pass" id="pass"
+						class="inputBox" style="width: 150px" /></td>
+				</tr>
+				<tr>
+					<td><label for="chk">checkbox</label></td>
+					<td><input type="checkbox" name="chk" id="chk" /></td>
+				</tr>
+				<tr>
+					<td><label>hidden</label></td>
+					<td><input type="hidden" name="hid" id="hid" /></td>
+				</tr>
+				<tr>
+					<td><label for="upfile">file</label></td>
+					<td><input type="file" name="upfile" id="upfile"
+						style="width: 300px" /></td>
+				</tr>
+				<tr>
+					<td><label for="textarea">textarea</label></td>
+					<td><textarea name="ta" id="ta" class="inputBox"
+							style="width: 300px; height: 100px"></textarea></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="button" value="값 설정"
+						class="btnMy" onclick="setValue()" /></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon"
+	href="http://192.168.10.225/html_prj/common/images/favicon.ico" />
+<link rel="stylesheet" type="text/css"
+	href="http://192.168.10.210/html_prj/common/css/main_20240911.css">
+<style type="text/css">
+#div {
+	margin-top: 30px;
+	margin-left: 30px;
+	width: 500px;
+	height: 300px;
+	border: 1px solid black;
+	width: 300px;
+	width: 300px
+}
+</style>
+<script type="text/javascript">
+	window.onload = function() { //onload 이벤트 속성을 무기명 함수로 처리
+		//1.태그를 찾고, 이벤트 리스너에 등록
+		document.getElementById("btn").addEventListener("click", setName);
+		document.getElementById("kd").addEventListener("keydown", keyValue);
+		document.getElementById("ku").addEventListener("keyup", keyValue2);
+	}//onload																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														
+
+	function keyValue(evt) {
+		var data = document.frm.ku.value;
+		document.getElementById("output").innerHTML = `키다운 입력값 : ${ data}( 눌려진 키 값 : ${ evt.which }) : ${ data.length }자`;
+		//if( evt.which == 13){
+		//	document.frm.kd.focus();
+		//}//end if
+	}//keyValue
+
+	function keyValue2(evt) {
+		var data = document.frm.ku.value;
+		document.getElementById("output").innerHTML = `키업 입력값 : ${ data}( 눌려진 키 값 : ${ evt.which }) : ${ data.length }자`;
+		//if( evt.which == 13){
+		//	document.frm.kd.focus();
+		//}//end if
+	}//keyValue2
+
+	//이벤트 처리코드
+	function setName() {
+		var name = document.frm.name.value;
+		if (name.trim() == "") {
+			alert("이름은 필수 입력!!!");
+			return;
+		}//end if
+
+		document.getElementById("spName").innerHTML = name;
+		document.frm.name.value = "";
+	}//setName
+</script>
+</head>
+<body>
+	<div>
+		<div id="output">
+			입력하신 이름은 <span id="spName">Xxx</span>입니다.
+		</div>
+		<form name="frm">
+			<label>이름</label><input type="text" name="name" id="name"
+				class="inputBox" /> <input type="button" value="클릭" id="btn"
+				class="btnMy" style="width: 80px" /> <label>키다운</label><input
+				type="text" name="text2" id="kd" class="inputBox" /> <label>키업</label><input
+				type="text" name="text3" id="ku" class="inputBox" />
+		</form>
+	</div>
+
+	<textarea name="textarea" id="ku" class="inputBox"></textarea>
+	<label>입력수</label>
+	<div id="output"></div>
+</body>
+</html>

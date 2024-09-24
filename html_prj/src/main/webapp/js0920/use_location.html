@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>사이트 이동</title>
+<link rel="shortcut icon"
+	href="http://192.168.10.219/html_prj/common/images/favicon.ico">
+<link rel="stylesheet" type="text/css"
+	href="http://192.168.10.219/html_prj/common/css/main_20240911.css">
+<script type="text/javascript">
+	window.onload = function() {
+		document.getElementById("btn").addEventListener("click", move);
+		document.getElementById("btnReLoad").addEventListener("click",
+				reloadPage);
+	}
+
+	function move() {
+		var selectedValue = getValue();
+
+		// '선택' 상태일 때 http://daum.net으로 이동
+		if (selectedValue === "---선택---") {
+			if (confirm("http://daum.net으로 이동하시겠습니까?")) {
+				location.href = "http://daum.net"; // 페이지 이동
+			}
+		} else {
+			// 그 외의 선택한 사이트로 이동
+			if (confirm(selectedValue + "으로 이동하시겠습니까?")) {
+				location.href = selectedValue;
+			}
+		}
+	}
+
+	function getValue() {
+		var obj = document.frm;
+		var sel = obj.sel.value;
+		return sel;
+	}// getValue
+
+	function reloadPage() {
+		if (confirm("새로고침 하시겠습니다.")) {
+			location.reload();
+		}
+	}// reloadPage
+</script>
+</head>
+<body>
+	<div>
+		<input type="button" value="이동" class="btnMy" style="width: 80px"
+			id="btn" /> <input type="button" value="새로고침" class="btnMy"
+			style="width: 80px" id="btnReLoad" />
+	</div>
+	<form name="frm">
+		<label for="select">사이트 선택</label> <select name="sel" id="select"
+			class="inputBox" style="width: 150px">
+			<option selected="selected">---선택---</option>
+			<option value="https://www.daum.net/">다음</option>
+			<option value="https://www.naver.com/">네이버</option>
+			<option value="https://www.google.co.kr/">구글</option>
+			<option value="https://m.nate.com/">네이트</option>
+			<option value="https://www.youtube.com/">유튜브</option>
+		</select>
+	</form>
+</body>
+</html>

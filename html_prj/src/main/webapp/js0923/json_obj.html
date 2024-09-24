@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon"
+	href="http://192.168.10.219/html_prj/common/images/favicon.ico" />
+<link rel="stylesheet" type="text/css"
+	href="http://192.168.10.219/html_prj/common/css/main_20240911.css">
+<!-- bootstrap CDN 시작-->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+	crossorigin="anonymous"></script>
+<!-- bootstrap CDN 끝-->
+
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	function useString() {
+		// 1. 문자열 형식으로 만드는 JSONObject
+		var txt = "{name:'탄지로',age:20,flag:true,msg:function(){ return '불의 호흡'; }}";
+		//alert( txt.name );// 일반문자열이므로 parsing되지 않는다.
+
+		// 2. 문자열을 JSONObject 객체로 생성. ( eval 함수 사용)
+		var jsonObj = eval("(" + txt + ")");
+
+		// 4. 값 추가
+		// 기존의 이름이 없다면 추가된다. -> 존재한다면 덮어쓴다.
+		jsonObj.addr = "서울시 강남구 역삼동";
+		
+		// 5. 값 삭제
+		delete jsonObj.flag; // undefined
+		
+		// 3. JSONObject에서 이름을 사용하여 값을 얻는다. (Parsing)
+		var output = `<strong>이름 : </strong> ${jsonObj.name} <br>
+					  <strong>나이 : </strong> ${jsonObj.age}  <br>
+					  <strong>불린 : </strong> ${jsonObj.flag} <br>
+					  <strong>함수 : </strong> ${jsonObj.msg()} // 함수는 ()붙여야함 <br>
+					  <strong>주소 : </strong> ${jsonObj.addr}	  
+		`;
+		
+		
+		
+
+
+		document.getElementById("output").innerHTML = output;
+	}//useString
+	function useJson() {
+
+		var jsonObj={name:"둘리",age:100000000, flag:false, msg:function(name){ return name+" 어서오고!";}}
+
+
+		// 3. JSONObject에서 이름을 사용하여 값을 얻는다. (Parsing)
+		var output = `<strong>이름 : </strong> ${jsonObj.name} <br>
+					  <strong>나이 : </strong> ${jsonObj.age}  <br>
+					  <strong>불린 : </strong> ${jsonObj.flag} <br>
+					  <strong>함수 : </strong> ${jsonObj.msg('도우너')} // 함수는 ()붙여야함 <br>
+		`;
+		
+		document.getElementById("output").innerHTML = output;
+	}// useJson
+</script>
+</head>
+<body>
+	<div>
+		<input type="button" class="btn btn-primary" value="문자열형식 JSONObject"
+			onclick="useString()" /> <input type="button"
+			class="btn btn-secondary" value="JSONObject" onclick="useJson()" />
+		<div id="output"></div>
+
+	</div>
+</body>
+</html>

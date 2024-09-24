@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon"
+	href="http://192.168.10.225/html_prj/common/images/favicon.ico" />
+<link rel="stylesheet" type="text/css"
+	href="http://192.168.10.210/html_prj/common/css/main_20240911.css">
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	//function setEvt(){
+	window.onload = function() { //onload 이벤트 속성을 무기명 함수로 처리
+		document.getElementById("btn").onclick = function() {
+			var name = document.frm.name.value;
+			if (name.trim() == "") {
+				alert("이름은 필수 입력!!!");
+				return;
+			}//end if
+
+			document.getElementById("spName").innerHTML = name;
+			document.frm.name.value = "";
+		}//onclick
+	}
+	//}
+</script>
+</head>
+<!-- <body onload="setEvt()"> -->
+<body>
+	<div>
+		<div id="output">
+			입력하신 이름은 <span id="spName">Xxx</span>입니다.
+		</div>
+		<form name="frm">
+			<label>이름</label><input type="text" name="name" id="name"
+				class="inputBox" /> <input type="button" value="클릭" id="btn"
+				class="btnMy" style="width: 80px" />
+		</form>
+	</div>
+</body>
+</html>

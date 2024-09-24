@@ -73,6 +73,30 @@ div {
 				+ hobby;
 
 	}//getCheckedValue
+
+	function getSelectedValue() {
+		var obj = document.selFrm;
+
+		var selArr = obj.sel;
+		alert("옵션의 수 : " + selArr.length + " / 몇번째 옵션이 선택 : "
+				+ selArr.selectedIndex)
+
+		if (selArr.selectedIndex != 0) {
+			var selectValue = "";
+			//배열 이므로 반복한다.
+			for (var i = 0; i < selArr.length; i++) {
+				//alert( selArr[i].value +" / "+selArr[i].selected )
+				if (selArr[i].selected) {
+					selectValue = `선택한 메일 : ${selArr[i].value}`;
+					break;
+				}//end if
+			}//end for
+
+			document.getElementById("selOut").innerHTML = selectValue;
+
+		}//end if
+
+	}//getSelectedValue
 </script>
 </head>
 <body>
@@ -82,7 +106,7 @@ div {
 			<form name="chkFrm">
 				<h2>checked 속성으로 값 얻기</h2>
 				<input type="radio" name="gender" value="남자">남자 | <input
-					type="radio" name="gender" value="여자">여자 <br /> <br /> <input
+					type="radio" name="gender" value="여자">여자 <br /> <input
 					type="checkbox" name="hobby" value="영화감상" />영화 <input
 					type="checkbox" name="hobby" value="음악감상" />음악 <input
 					type="checkbox" name="hobby" value="게임" />게임 <input
@@ -99,7 +123,16 @@ div {
 		</div>
 		<div id="selected">
 			<h2>selected 속성으로 값 얻기</h2>
-
+			<form name="selFrm">
+				<select name="sel" onchange="getSelectedValue()">
+					<option value="N/A">---선택해주세요---</option>
+					<option value="gmail.com">지메일</option>
+					<option value="naver.com">네이버메일</option>
+					<option value="daum.net">다음메일</option>
+					<option value="hotmail.com">핫메일</option>
+				</select>
+			</form>
+			<div id="selOut"></div>
 		</div>
 
 	</div>
