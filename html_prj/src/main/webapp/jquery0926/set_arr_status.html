@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon"
+	href="http://192.168.10.225/html_prj/common/images/favicon.ico" />
+<link rel="stylesheet" type="text/css"
+	href="http://192.168.10.210/html_prj/common/css/main_20240911.css">
+<style type="text/css">
+div {
+	color: #000
+}
+
+#wrap {
+	width: 800px;
+	height: 800px;
+	margin: 0px auto
+}
+
+#checked {
+	width: 398px;
+	height: 398px;
+	float: left;
+	border: 1px solid #333
+}
+
+#selected {
+	width: 398px;
+	height: 398px;
+	float: right;
+	border: 1px solid #333
+}
+
+#chkDiv {
+	clear: both;
+	width: 800px;
+	height: 400px;
+}
+</style>
+<!-- jQuery CDN 시작-->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		$("#btnChk").click(function() {
+			setCheckedStatus();
+		})//click
+
+		$("#btnSel").click(function() {
+			setSelectedStatus();
+		})//click
+	});
+
+	function setCheckedStatus() {
+		//attr함수 : 1번만 변경
+		//alert( $("[name='gender']:eq(0)").val() );
+		var num = parseInt(Math.random() * 2);
+		//alert( num );
+		//$("[name='gender']:eq("+num+")").attr("checked",true);
+
+		//prop : 여러 번 변경 가능
+		//라디오버튼 설정
+		$("[name='gender']:eq(" + num + ")").prop("checked", true);
+
+		//체크박스 설정
+		$("[name='hobby']:eq(0)").prop("checked", true);
+		$("[name='hobby']:eq(1)").prop("checked", true);
+		$("[name='hobby']:eq(5)").prop("checked", true);
+
+		//모든 속성을 설정할 수 있다.
+		//$("#name").attr("value","test");
+		$("#name").prop("value", "test!test!");
+
+	}//setCheckedStatus
+
+	function setSelectedStatus() {
+		$("#sel option:eq(2)").prop("selected", true);
+
+	}//setSelectedStatus
+
+	function chkEmail() {
+		//alert($("[name='mailFlag']").is(":checked"))	
+		$("[name='mail']").prop("checked",
+				$("[name='mailFlag']").is(":checked"));
+	}//chkEmail
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<h2>checked로 상태변환하는 HTML Form Control들</h2>
+		<div id="checked">
+			<form name="chkFrm">
+				<h2>checked 속성으로 상태설정</h2>
+				<input type="text" name="name" id="name" /><br /> <input
+					type="radio" name="gender" value="남자">남자 | <input
+					type="radio" name="gender" value="여자">여자 <br /> <input
+					type="checkbox" name="hobby" value="영화감상" />영화 <input
+					type="checkbox" name="hobby" value="음악감상" />음악 <input
+					type="checkbox" name="hobby" value="게임" />게임 <input type="checkbox"
+					name="hobby" value="운동" />운동 <input type="checkbox" name="hobby"
+					value="등산" />등산 <input type="checkbox" name="hobby" value="낚시" />낚시
+
+				<div>
+					<input type="button" value="checked설정" class="btnMy" id="btnChk" />
+					<input type="reset" value="초기화" class="btnMy" />
+				</div>
+			</form>
+		</div>
+		<div id="selected">
+			<h2>selected 속성으로 상태설정</h2>
+			<form name="selFrm">
+				<select name="sel" id="sel">
+					<option value="N/A">---선택해주세요---</option>
+					<option value="gmail.com">지메일</option>
+					<option value="naver.com">네이버메일</option>
+					<option value="daum.net">다음메일</option>
+					<option value="hotmail.com">핫메일</option>
+				</select>
+			</form>
+			<div>
+				<input type="button" value="selected설정" class="btnMy" id="btnSel" />
+			</div>
+
+		</div>
+		<div id="chkDiv">
+			<form name="mailFrm">
+				<table>
+					<thead>
+						<tr>
+							<th><input type="checkbox" name="mailFlag"
+								onclick="chkEmail()"></th>
+							<th style="width: 600px">제목</th>
+							<th style="width: 80px">수신일</th>
+							<th style="width: 120px">보낸사람</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="checkbox" name="mail" value="1"></td>
+							<td>무더운 여름 시원한 바닷가에서 바다이야기... 당신도부자될수...</td>
+							<td>24.09.20</td>
+							<td>김실장</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="mail" value="2"></td>
+							<td>2년 6개월만에 금리인하 단행!! 빅컷! 0.5%단행!! 판단은 개인의 몫!</td>
+							<td>24.09.20</td>
+							<td>쌍용증권</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="mail" value="3"></td>
+							<td>올해 FOMC 2회 남음! 금리인하 당신도 부자....</td>
+							<td>24.09.20</td>
+							<td>신안증권</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="mail" value="4"></td>
+							<td>고객님은 무담보로 500원까지 대출가능하십니다.</td>
+							<td>24.09.19</td>
+							<td>김하나 실장</td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

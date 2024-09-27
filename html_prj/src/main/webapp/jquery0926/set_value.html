@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon"
+	href="http://192.168.10.225/html_prj/common/images/favicon.ico" />
+<link rel="stylesheet" type="text/css"
+	href="http://192.168.10.210/html_prj/common/css/main_20240911.css">
+<style type="text/css">
+#div {
+	font-weight: bold;
+	font-size: 20px;
+	color: #000
+}
+</style>
+<!-- jQuery CDN 시작-->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		$("#btnSet").click(function() {
+			setValue();
+		});
+	});//ready
+
+	function setValue() {
+
+		$("#text").val("오늘은 목요일");
+		$("#pass").val("1234567");
+		$("#hid").val("내일은 금요일 10월 2일부터 6일까지 휴강");
+		//obj.upfile.value="c:/dev/env.bat";//error <input type="file"은 value 설정을 할 수 없다.
+		// $("#upfile").val("c:/dev/env.bat");
+		obj.ta.value = "JavaScript는 Front-end 언어";
+	}//setValue
+</script>
+</head>
+<body>
+	<div>
+		<h2>name 속성에 값설정</h2>
+		<form name="frm">
+			<table>
+				<tr>
+					<td><label for="text">text</label></td>
+					<td><input type="text" name="text" id="text" class="inputBox"
+						style="width: 150px" /></td>
+				</tr>
+				<tr>
+					<td><label for="pass">password</label></td>
+					<td><input type="password" name="pass" id="pass"
+						class="inputBox" style="width: 150px" /></td>
+				</tr>
+				<tr>
+					<td><label>hidden</label></td>
+					<td><input type="hidden" name="hid" id="hid" /></td>
+				</tr>
+				<tr>
+					<td><label for="upfile">file</label></td>
+					<td><input type="file" name="upfile" id="upfile"
+						style="width: 300px" /></td>
+				</tr>
+				<tr>
+					<td><label for="textarea">textarea</label></td>
+					<td><textarea name="ta" id="ta" class="inputBox"
+							style="width: 300px; height: 100px"></textarea></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="button" value="값 설정"
+						class="btnMy" id="btnSet" /></td>
+				</tr>
+			</table>
+		</form>
+
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

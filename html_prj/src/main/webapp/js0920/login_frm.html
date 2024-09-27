@@ -1,59 +1,57 @@
-
-
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
 <head>
-<script src="http://192.168.10.210/html_prj/js0920/js/color-modes.js"></script>
-
+<script src="http://192.168.10.219/html_prj/js0920/js/color-modes.js"></script>
 <meta charset="utf-8">
 <title>로그인</title>
 
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-
-<link href="http://192.168.10.210/html_prj/js0920/css/bootstrap.min.css"
+<link href="http://192.168.10.219/html_prj/js0920/css/bootstrap.min.css"
 	rel="stylesheet">
-
 <meta name="theme-color" content="#712cf9">
 
 <!-- Custom styles for this template -->
-<link href="http://192.168.10.210/html_prj/js0920/sign-in.css"
+<link href="http://192.168.10.219/html_prj/js0920/sign-in.css"
 	rel="stylesheet">
+
+<!-- jQuery CDN -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
 <script type="text/javascript">
-	window.onload = function() {
-		document.getElementById("id").addEventListener("keyup", enterKey);
-		document.getElementById("pass").addEventListener("keyup", enterKey);
-		document.getElementById("btnLogin").addEventListener("click", chkNull);
-	}//onload
+	$(function() {
+		$("#id, #pass").keyup(function(event) {
+			if (event.which == 13) {
+				chkNull();
+			}
+		});
 
-	function enterKey(evt) {
-		if (evt.which == 13) {
+		$("#btnLogin").click(function() {
 			chkNull();
-		}//end if
-	}//enterKey
+		});
 
-	function chkNull() {
-		var obj = document.loginFrm;
+		function chkNull() {
+			var idNode = $("#id").val();
+			var passNode = $("#pass").val();
 
-		var idNode = obj.id;
-		if (idNode.value.replaceAll(/ /g, "") == "") {
-			idNode.value = "";
-			idNode.focus();
-			return;
-		}//end if
+			if (idNode === "") {
+				alert("ID를 입력하세요.");
+				$("#id").focus();
+				return;
+			}
 
-		var passNode = obj.pass;
-		if (passNode.value.replaceAll(/ /g, "") == "") {
-			passNode.value = "";
-			passNode.focus();
-			return;
-		}//end if
+			if (passNode === "") {
+				alert("비밀번호를 입력하세요.");
+				$("#pass").focus();
+				return;
+			}
 
-		alert("로그인 이동!!!");
-
-	}//chkNull
+			alert("로그인 성공!");
+			window.location.href = "https://www.sist.co.kr";
+		}
+	});
 </script>
-
 </head>
 <body class="d-flex align-items-center py-4 bg-body-tertiary">
 
@@ -62,12 +60,12 @@
 			<h1 class="h3 mb-3 fw-normal">로그인</h1>
 
 			<div class="form-floating">
-				<input type="email" name="id" id="id" class="form-control"
-					placeholder="name@example.com">
+				<input type="text" name="id" id="id" class="form-control"
+					placeholder="ID"> <label for="id">ID</label>
 			</div>
 			<div class="form-floating">
 				<input type="password" name="pass" id="pass" class="form-control"
-					placeholder="Password">
+					placeholder="Password"> <label for="pass">Password</label>
 			</div>
 
 			<input class="btn btn-primary w-100 py-2" id="btnLogin" type="button"
@@ -75,7 +73,7 @@
 		</form>
 	</main>
 	<script
-		src="http://192.168.10.210/html_prj/js0920/js/bootstrap.bundle.min.js"></script>
+		src="http://192.168.10.219/html_prj/js0920/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

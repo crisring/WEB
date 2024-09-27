@@ -63,12 +63,13 @@
 	}
 
 	function printObj() {
-		if (jsonObj.name === "") {
+		if (jsonObj.name === "undefined") {
 			alert("이름을 입력하세요.");
 			return;
 		}
 
-		if (isNaN(jsonObj.age) || jsonObj.age === "" || jsonObj.age <= 0) {
+		if (isNaN(jsonObj.age) || jsonObj.age === "undefined"
+				|| jsonObj.age <= 0) {
 			alert("나이를 입력하세요.");
 			return;
 		}
